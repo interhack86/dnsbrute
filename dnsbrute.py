@@ -19,7 +19,7 @@ file = open(filename,'r')
 fc = open(filename, 'r')
 cnames = fc.readlines()
 
-out = open('results_' + domain_name, 'w')
+out = open('results_' + domain_name + '.txt', 'w')
 
 sys.stdout.write("[*]-Using dictionairy: " + filename + " (Loaded " + str(len(cnames)) + " words)\n")
 out.write("[*]-Using dictionairy: " + filename + " (Loaded " + str(len(cnames)) + " words)\n")
