@@ -2,6 +2,8 @@
 
 import sys, string, socket
 
+
+
 def help():
 	print "\nUsage: python dnsbrute.py domain_name dictionary\n"
 	sys.exit()
