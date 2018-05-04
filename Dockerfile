@@ -2,7 +2,6 @@ FROM python:2.7
 MAINTAINER interhack
 
 RUN pip install https://github.com/interhack86/dnsbrute/archive/master.zip
-
 RUN mkdir domains
 WORKDIR domains
 RUN wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/bitquark-subdomains-top100K.txt && \
