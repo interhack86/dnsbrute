@@ -41,7 +41,7 @@ for line in file.read().split('\n'):
 	except:
 		pass
 sys.stdout.write(ESC + '[2K'+ESC + '[G')
-sys.stdout.write("[*]-Total assets found:", i)
+sys.stdout.write("[*]-Total assets found: " + str(i))
 file.close()
 fc.close()
 out.close()
