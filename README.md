@@ -1,7 +1,7 @@
 # dnsbrute:
 Simple DNS Brute using a dictionary
 
-# Usage:
+# Use:
 python -m dnsbrute -h
 
 usage: -m dnsbrute [-h] [-d DOMAIN] [-e ENGINE] -w WORDLIST [-o OUTPUT]
@@ -17,7 +17,7 @@ optional arguments:
   -o OUTPUT    write results in file
   -v VERBOSE   Verbosity none/full
 
-# Usage docker with default dictionaries:
+# Use docker with default dictionaries:
 docker run -it interhack/dnsbrute -d <domain> -w <wordlist>
 
 ## Defaults Wordlists in docker:
@@ -32,5 +32,5 @@ docker run -it interhack/dnsbrute -d <domain> -w <wordlist>
 - subdomains-top1mil-20000.txt
 - subdomains-top1mil-5000.txt
 
-# Usage docker with others dictionaries:
+# Use docker with others dictionaries:
 docker run -it -v path_dictionaries:/domains/ interhack/dnsbrute -d <domain> -w <wordlist>
