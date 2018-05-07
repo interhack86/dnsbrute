@@ -1,6 +1,7 @@
-FROM python:2.7
+FROM python:2.7-alpine
 MAINTAINER interhack
 
+RUN apk update && apk add ca-certificates && update-ca-certificates && apk add openssl
 RUN pip install https://github.com/interhack86/dnsbrute/archive/master.zip
 RUN mkdir domains
 WORKDIR domains
