@@ -18,7 +18,7 @@ optional arguments:
   -v VERBOSE   Verbosity none/full
 
 # Use docker with default dictionaries:
-docker run -it interhack/dnsbrute -d <domain> -w <wordlist>
+docker run -it interhack/dnsbrute -d domain -w wordlist
 
 ## Defaults Wordlists in docker:
 
@@ -33,4 +33,4 @@ docker run -it interhack/dnsbrute -d <domain> -w <wordlist>
 - subdomains-top1mil-5000.txt
 
 # Use docker with others dictionaries:
-docker run -it -v path_dictionaries:/domains/ interhack/dnsbrute -d <domain> -w <wordlist>
+docker run -it -v path_dictionaries:/domains/ interhack/dnsbrute -d domain -w wordlist
