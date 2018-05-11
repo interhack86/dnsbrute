@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, string, socket, urllib2, re
+import sys, string, socket, urllib2, re, dns.resolver
 
 class dnsbrute(object):
 	def __init__(self, domain, verbose, output=''):
@@ -10,6 +10,33 @@ class dnsbrute(object):
 		self.output = open(output, 'w')	if output != '' else ''
 		self.outputFlag = True if output != '' else False 
 		self.subdomains = []
+
+	def dig_information(self, iterations = 4):
+		checks = ['MX', 'NS']
+		try:
+			for check in checks:
+				con = 1
+				while iterations >= con:
+					for x in dns.resolver.query(self.domain, check):
+						try:
+							x = str(x)
+							if check == 'MX':
+								y = x.split(' ')[1].split('.')[0]
+							else:
+								y = x.split('.')[0]
+							info_sub = self.info_subdomain(y)
+							if info_sub not in self.subdomains:
+								if self.verbose == 'full':
+									print ' [*]' + y + ', ' + info_sub 
+								if self.outputFlag:
+									self.output.write(y + ', ' + info_sub + '\n')
+								
+								self.subdomains.append(info_sub)
+						except:
+							pass
+					con+=1
+		except:
+			pass
 
 	def clean_subdomains_dorks(self, info):
 		for x in info:
