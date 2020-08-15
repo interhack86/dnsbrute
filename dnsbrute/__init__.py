@@ -75,7 +75,7 @@ class dnsbrute(object):
 			sys.stdout.write(' [*]' + line+ ', ') if self.verbose == 'full' else ''
 			sys.stdout.flush()
 			try:
-				info = self.info_subdomain(line)
+				info = self.info_subdomain(line).lower()
 				if self.verbose == 'full':
 					if info not in self.subdomains:
 						print info
